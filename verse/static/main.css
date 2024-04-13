@@ -1,0 +1,144 @@
+﻿:root{
+
+}
+
+body {
+    background-color: #456423;
+}
+h1{
+    position: absolute;
+    text-align: center;
+    z-index: 50;
+    margin-left: 50%;
+}
+[id$="pic"]{
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    z-index: 10;
+    filter: brightness(40%);
+}
+.contshot {
+    display: flex;
+    justify-content: center;
+    margin-top: 235px;
+}
+.contshot [id$="shot"] {
+    position: absolute;
+    width: 50%;
+    height: 500px;
+    align-items: center;
+    z-index: 10;
+}
+[class|="divs"]{
+    margin-top: 10em;
+    position: relative;
+    z-index: 30;
+}
+#container2{
+    position: relative;
+    z-index: 10;
+}
+h3 {
+    color: green;
+    text-align: center;
+}
+[id^="ins"]{
+    color: #231590;
+}
+h2 {
+    filter: brightness(120%);
+    margin-left: 50%;
+    margin-top: 25px;
+}
+[id*="video"]{
+    width: 100%;
+    height: 500px;
+}
+[id^="products"]{
+    margin-top: 400px;
+    display: flex;
+    justify-content: space-around;
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    gap: 2rem;
+    list-style-type: none;
+}
+.products{
+    width: 200px;
+    height: 200px;
+}
+#explain{
+    color: darkred;
+    font-size: 2rem;
+
+}
+#main{
+    padding: 10px 10px;
+    background-color: #674320;
+    border-radius: 10px;
+    margin-left: 50%;
+    
+}
+.divs2 {
+    margin-top: 500px;
+}
+.navigations ul {
+    position: absolute;
+    list-style-type: none;
+    text-decoration: none;
+    z-index: 50;
+    margin-top: 60px;
+    margin-right: 0px;
+}
+[class|="lists"], [class|="lists"] a {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    justify-content: space-around;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+@media screen  and (max-width: 600px){
+    h1 {
+        position: absolute;
+        z-index: 50;
+        margin-left: 20%;
+        color: #888;
+    }
+    h2 {
+        filter: brightness(120%);
+        margin-left: 30%;
+        margin-top: 60px;
+        color: #99f;
+        filter: opacity(0.5);
+    }
+    #explain {
+        color: darkred;
+        font-size: 0.9rem;
+    }
+    .contshot {
+        margin-top: 192px;
+    }
+    .contshot [id$="shot"] {
+        //position: absolute;
+        width: 50%;
+        height: 300px;
+        align-items: center;
+        //z-index: -1;
+    }
+  .divs2{
+      margin-top:320px;
+  }
+    [class|="lists"], [class|="lists"] a {
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        text-decoration: none;
+        list-style-type: none;
+    }
+}

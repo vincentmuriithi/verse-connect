@@ -1,0 +1,10 @@
+﻿{% extends "main.html" %}
+{% block content %}
+<h1>Verse Checkout</h1>
+<div>
+    {% for k in req %}
+    <p>{{k.clients.name}} => {{k.product}}</p>
+    {% endfor%}
+</div>
+<img  src="{{url_for('static', filename='images/lip.jpg')}}" alt="Image not found" />
+{% endblock %}

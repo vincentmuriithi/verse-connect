@@ -1,0 +1,96 @@
+﻿{% extends "main.html" %}
+{% block content %}
+<h1>Verse Connect </h1>
+</br>
+<img id="pic" src="{{url_for('static', filename='images/dress9.jpg')}}" alt="Image not found" />
+<nav class="navigations">
+    <ul>
+        <li>Cart</li>
+        <li>Categories</li>
+        <li>Help</li>
+    </ul>
+</nav>
+<div class="divs">
+    <br />
+    <p>
+        Making goods and services convenienlty accessible to all,
+        giving everyone a power to buy and sell online
+    </p>
+    <a id="page" href="{{url_for('main_page.main')}}">here</a>
+    <button id="main">Main Page</button>
+    <br />
+    <div class="contshot">
+        <img id="screenshot" src="{{url_for('static', filename='images/screenshot.png')}}" alt="Image not found" />
+
+
+    </div>
+    <div class="divs2">
+    <p>A part of the scrrenshot of the mainpage </p>
+
+
+
+    <p id="explain">
+        Verse Shopping Is an experience Worth trying,allowing even small businesses</br>
+        to go online and reach to more clients, curbing job indefficiences by enabling</br>
+        to render their services online and increase chances of the need of their services</br>
+        finding clients in need of them.The way I see Verse is different.Verse future is a future</br>
+        every service and everything is accessible.
+        <br />
+        <br />
+        Verse-Connect is yet to see most of it's feautures implemented, as it continues being developed <br />
+        It will be a real game changer.
+    </p>
+    <footer>
+        <h3 id="inspire">What Inspired the development of Verse-Connect?</h3>
+        <video id="inspire_video" type="video/mp4" src="{{url_for('static', filename='/videos/inspire.mp4')}}" controls>video not found</video>
+        <p id="why">
+            Verse-Connect is not a project that I decided to venture on lately rather it’s a dream
+            I’ve had of making a reality long before I joined alx
+            When growing up I’ve thought of how things could be done more swiftly and conveniently.<br />
+            It’s true we already have platforms that allow for shopping and access of services
+            but to be they are quite limited and only favour the big companies <br />
+            which have the resources to maintain such platforms.
+            Our country is made of me a and you as well,
+            we want a way we can access services from
+            each other and render our services to more people
+            at convenient prices and time.We need a way to balance <br />
+            between the areas of plenty and the areas of demand.
+            I thought about it all and thought something has to be done.
+            An good example is of M-pesa.
+            Before M-pesa hit the ground running in kenya people used to rely on
+            banks and had long queues to get cash or even deposit their money.
+            The banking system at the time was the major voice of the cashflow system in kenya.
+            When mpesa came it did not only close the queues and made it convenient for the people <br />
+            of kenya but also gave them the power to control their funds as they wish.
+            They can send receive and withdraw at the time of their convenience.
+            Today it’s very hard to imagine life without mpesa in kenya.
+            Both big and small businesses have implemented and are using mpesa services.
+            I don’t mean  to dive deeper into mpesa yet the truth of the matter is Verse-Connect
+            is not just a pass and go concept project.
+            It’s holds the power to change many lives in our country and even
+            the continent of Africa if well implemented.
+        </p>
+        <br />
+        <p><strong>You can reach us via: </strong></p>
+        <ul class="lists">
+            <li><a href="">vincent's twitter</a></li>
+            <li><a href="https://github.com/vincentmuriithi/">vincent's github</a></li>
+            <li><a href="https://www.linkedin.com/in/vincent-muriithi-8b3388270/">vincent's linkedin</a></li>
+            <li><a href="http://twitter.com/DIANAMWELU35251">Diana's twitter</a></li>
+            <li><a href="https://github.com/Dian956">Diana's github</a></li>
+            <li><a href="http://linkedin.com/in/diana-mwelu-501727281">Diana's linkedin</a></li>
+        </ul>
+<p><strong>More on Verse-Connect: </strong></p>
+
+        <ul class="lists">
+            <li><a href="https://verseconnect.pythonanywhere.com/">Verse-Connect sample deployment</a></li>
+            <li><a href="https://github.com/vincentmuriithi/verse-connect">Verse-Connect github repository</a></li>
+        </ul>
+    </footer>
+</div>
+    <div id="divs3">
+
+
+    </div>
+</div>
+{% endblock %}
