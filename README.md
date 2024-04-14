@@ -7,12 +7,12 @@ Verse Connect is an innovative online platform designed to revolutionize the way
 
 Deployed Site https://verseconnect.pythonanywhere.com/
 
-Final Project Blog Article
+Final Project Blog Article https://verseconnect.pythonanywhere.com/about
 
 Authors:
 
     Diana Ndambuki linkedln.com/in/diana-mwelu-501727281
-    Vincent Muriithi 
+    Vincent Muriithi linkenln.com/in//vincent-muriithi-8b3388270/
 
 Installation
 
