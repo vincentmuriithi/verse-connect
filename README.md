@@ -1,6 +1,7 @@
 This repository contains files for verse-connect e-commerce kind of aplication built to 
 support the community businesses and alleviate the individual businesses as well big organisations
-
+This project is done in teams.Vincent Muriithi and Diana Ndambuki.
+With  unity we worked to accomplish the project.
 Introduction
 
 Verse Connect is an innovative online platform designed to revolutionize the way women shop for outfits. With a curated selection of trendy and fashionable clothing items, Verse Connect offers a seamless and personalized shopping experience for fashion-forward women.
