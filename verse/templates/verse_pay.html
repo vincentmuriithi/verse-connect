@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>verse_pay</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='verse_pay.css')}}">
+</head>
+<body>
+    <div>
+        <h1>Verse-Connect Payment</h1>
+    </div>
+    <div id="mpesa_cont">
+        <div id="mpesa">
+            <h2>Mpesa payment</h2>
+            <form id="payment_form" action="" method="post">
+                <label>Amount: </label><input class="myInputs" type="text" /></br>
+                <label>Phone number: </label><input class="myInputs" type="tel" /></br>
+                <label>Total: </label><input class="myInputs total" type="number" readonly="readonly" placeholder="0" /></br>
+                <input id="swiper" type="submit" value="Pay"/>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

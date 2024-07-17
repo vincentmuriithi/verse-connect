@@ -1,0 +1,51 @@
+﻿body
+{
+    background-color: rgba(240, 240, 240, 1);
+}
+.categories{
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+li{
+    margin-left: 0px;
+    padding-left: 0px;
+}
+div {
+    margin-left: 0px;
+    padding-left: 0px;
+}
+#footer_cont{
+    background-color: rgba(60, 60, 60, 0.6);
+    margin: 0px;
+}
+#copyRight{
+    text-align: center;
+}
+footer {
+    margin: 0px;
+}
+ul {
+    margin-left: 0px;
+    padding-left: 0px;
+}
+.myProducts{
+    margin-right: 5px;
+}
+.categories img{
+    width: 350px;
+    height: 350px;
+}
+.view_more{
+    text-decoration: none;
+}
+.viewp{
+    text-align: right;
+}
+ul{
+    list-style-type: none;
+}
+#title{
+    text-align: center;
+}

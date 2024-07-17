@@ -9,3 +9,4 @@ from .account import account
 from .main import main_page
 from .verse_tables import db
 from .landing_page import landing_page
+from .shopping import shoper

@@ -1,0 +1,45 @@
+﻿body
+{
+}
+h1{
+    text-align: center;
+}
+#mpesa{
+    position: absolute;
+    background-color: rgba(80, 80, 80, 1);
+    width: 800px;
+    height: 500px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    flex-direction:column;
+    align-items: center;
+}
+#swiper{
+    padding: 10px;
+    width: 130px;
+    height: 35px;
+    text-align: center;
+    border-radius: 14px;
+}
+#mpesa h2{
+    color: rgba(60, 200, 10, 1);
+    position: relative;
+    top: -40px;
+}
+.total{
+    pointer-events: none;
+    border: none;
+    background-color: rgba(180, 180, 180, 1);
+}
+#payment_form{
+    margin-top: 20px;
+}
+#mpesa_cont{
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+}
+.myInputs{
+    margin-bottom: 40px;
+}

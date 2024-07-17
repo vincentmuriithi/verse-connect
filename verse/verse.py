@@ -7,7 +7,7 @@ Author:  Vincent M Karimi
 """
 
 from flask import Flask
-from resources import main_page, db, account, landing_page
+from resources import main_page, db, account, landing_page, shoper
 from waitress import serve #used when developing in windows environment as a server, it's serves the 
 # equivalence of gunicorn in unix systems
 import logging
@@ -23,6 +23,7 @@ logging.basicConfig(level=logging.DEBUG)
 app.register_blueprint(main_page)
 app.register_blueprint(account)
 app.register_blueprint(landing_page)
+app.register_blueprint(shoper)
 
 
 

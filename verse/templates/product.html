@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>product</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='product.css')}}" />
+</head>
+<body>
+    <div class="prod_cont0">
+        <div class="prod_cont1">
+            <br />
+            <img src="{{ url_for('static', filename=prod)}}" />
+        </div>
+    </div>
+    <div>
+        <h2>Product Details</h2>
+        <hr />
+        <p>Name: </p>
+        <p>Price: </p>
+        <p>Suppliers</p>
+    </div>
+    <div>
+        <h2>Related Products</h2>
+        <hr />
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+﻿{% macro viewer(category_name, image) %}
+<li>
+<div>
+    <h3>{{category_name}}</h3>
+    <ul class="categories">
+        <li>
+            <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
+        </li>
+        <li>
+            <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
+        </li>
+        <li>
+            <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
+        </li>
+        <li>
+            <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
+        </li>
+        <li>
+            <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
+        </li>
+        <li>
+            <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
+        </li>
+        <li>
+            <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
+        </li>
+        <li>
+            <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
+        </li>
+        <li>
+            <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
+        </li>
+    </ul>
+    <p class="viewp"><a class="view_more" href="">view more</a></p>
+</div>
+    </li>
+{% endmacro %}
+
+{% macro viewer_dynamic(category_name, items) %}
+<li>
+    <div>
+        <h3>{{category_name}}</h3>
+        <ul class="categories">
+            {% for k in items %}
+            <li>
+                <a href="{{ url_for('shopping.view', product_name=k)}}">
+                <img class="myProducts" src="{{url_for('static', filename=k)}}" alt="not available" /></a>
+            </li>
+            {% endfor %}
+        </ul>
+        <p class="viewp"><a class="view_more" href="">view more</a></p>
+    </div>
+</li>
+{% endmacro %}

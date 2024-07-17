@@ -1,0 +1,32 @@
+﻿{% from "macros1.html" import viewer, viewer_dynamic %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verse-shopping</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='shopping.css')}}"
+</head>
+<body>
+    <div>
+<h1 id="title">VERSE-CONNECT</h1>
+        <h2>Bringing Goods And Services At Your DoorStep</h2>
+    </div>
+    <div>
+        <ul>
+            {{ viewer_dynamic("Full wear", items[2])}}
+            {{ viewer_dynamic("Sneakers", items[3])}}
+            {{ viewer_dynamic("Shoe", shoes)}}
+            {{ viewer_dynamic("Bags", items[4])}}
+        </ul>
+    </div>
+    <div id="footer_cont">
+        <footer>
+           <p>Contacts: 0115293219</p>
+           <p>Email-address: verseconnect05@gmail.com</p>
+            <p id="copyRight">&copy;Verse-Connect 2024</p>
+
+        </footer>
+    </div>
+</body>
+</html>
