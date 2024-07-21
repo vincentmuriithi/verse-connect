@@ -4,7 +4,7 @@ This project is done in teams.Vincent Muriithi and Diana Ndambuki.
 With  unity we worked to accomplish the project.
 Introduction
 
-Verse Connect is an innovative online platform designed to revolutionize the way women shop for outfits. With a curated selection of trendy and fashionable clothing items, Verse Connect offers a seamless and personalized shopping experience for fashion-forward women.
+Verse Connect is an innovative online platform designed to revolutionize the way young generation shop for outfits. With a curated selection of trendy and fashionable clothing items, Verse Connect offers a seamless and personalized shopping experience for fashion-forwardyoung generation.
 
 Deployed Site https://verseconnect.pythonanywhere.com/
 
