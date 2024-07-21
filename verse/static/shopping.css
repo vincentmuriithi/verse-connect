@@ -8,6 +8,22 @@
     white-space: nowrap;
     overflow-x: auto;
 }
+#mytitle{
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex-grow: 1;
+    justify-content: center;
+    margin-bottom: 0px;
+
+}
+#mytitle h1{
+    flex-grow: 1;
+}
+#mytitle img{
+    position: absolute;
+    right: 0px;
+}
 li{
     margin-left: 0px;
     padding-left: 0px;
@@ -48,4 +64,21 @@ ul{
 }
 #title{
     text-align: center;
+}
+#cont{
+    position: relative;
+}
+#menu_cont{
+    position: absolute;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 10;
+    height: 90px;
+    background-color: rgba(120, 190, 150, 0.8);
+    margin-top: 0px;
+}
+#menu_cont a{
+    text-decoration: none;
 }

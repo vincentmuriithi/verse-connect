@@ -1,0 +1,31 @@
+﻿body {
+    background-color: rgba(60, 65, 80, 1);
+}
+#form_cont{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 100%;
+    height: 70vh;
+}
+form input{
+    margin-bottom: 20px;
+}
+form{
+    background-color: transparent;
+}
+.myinputs {
+    background-color: transparent;
+    border: 0px;
+    border-bottom: 1px solid #000;
+    color: #30fb30;
+}
+label{
+    border: none;
+}
+input:focus{
+    outline: none;
+}

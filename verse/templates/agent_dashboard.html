@@ -1,0 +1,61 @@
+﻿{% from "macros1.html" import verse_footer %}
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='agent_dashboard.js')}}" defer></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='agent_dashboard.css')}}" />
+</head>
+<body>
+    <div>
+    <div id="header_cont">
+        <h1>My Verse-Account</h1>
+        <img id="menu_bar" class="dropdown" src="{{ url_for('static', filename='icons/menu_bar.png')}}" />
+        </div>
+    <div class="dropdown menu">
+        <a href="{{ url_for('shopping.shop')}}">Verse_Home</a>
+        <a href="">Pesa_account</a>
+        <a href="">Logout</a>
+    </div>
+        <img  id="profile_pic" src="{{ file_url }}"/><br />
+        <div id="details">
+            <p>Name: {{ details.name }}</p>
+            <p>Agent No: </p>
+            <p>Location: {{ details.location }}</p>
+        </div>
+        <div id="details1">
+            <p>Phone no: {{ details.tel }}</p>
+            <p>Email: {{ details.email }}</p>
+        </div>
+    </div><br /><br /><br />
+    <div id="clear_float">
+        <button id="profile_btn" class="pic_listener">profile pic</button><br />
+        <form class="pic_listener" id="pic_form" action="/verse_uploads" method="post" enctype="multipart/form-data">
+            <input type="file" name="profile_pic" accept=".jpg, .jpeg" />
+            <input id="pic_submitter" type="submit" value="change pic" />
+        </form>
+    </div>
+    <div id="clear_float">
+        <h2>Products subscription</h2>
+        <hr />
+    </div>
+    <div>
+        <h2>Services Subscriptions</h2>
+        <hr />
+    </div>
+    <div>
+        <h2>Orders</h2>
+        <hr />
+        <h3>Active Orders</h3>
+        <hr />
+        <h3>Resolved orders</h3>
+        <hr />
+        <h3>Rejected Orders</h3>
+        <hr />
+    </div><br />
+    {{ verse_footer() }}
+</body>
+</html>

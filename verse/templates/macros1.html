@@ -1,39 +1,39 @@
 ﻿{% macro viewer(category_name, image) %}
 <li>
-<div>
-    <h3>{{category_name}}</h3>
-    <ul class="categories">
-        <li>
-            <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
-        </li>
-        <li>
-            <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
-        </li>
-        <li>
-            <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
-        </li>
-        <li>
-            <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
-        </li>
-        <li>
-            <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
-        </li>
-        <li>
-            <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
-        </li>
-        <li>
-            <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
-        </li>
-        <li>
-            <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
-        </li>
-        <li>
-            <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
-        </li>
-    </ul>
-    <p class="viewp"><a class="view_more" href="">view more</a></p>
-</div>
-    </li>
+    <div>
+        <h3>{{category_name}}</h3>
+        <ul class="categories">
+            <li>
+                <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
+            </li>
+            <li>
+                <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
+            </li>
+            <li>
+                <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
+            </li>
+            <li>
+                <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
+            </li>
+            <li>
+                <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
+            </li>
+            <li>
+                <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
+            </li>
+            <li>
+                <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
+            </li>
+            <li>
+                <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
+            </li>
+            <li>
+                <a href=""><img class="myProducts" src="{{url_for('static', filename=image)}}" alt="" /></a>
+            </li>
+        </ul>
+        <p class="viewp"><a class="view_more" href="">view more</a></p>
+    </div>
+</li>
 {% endmacro %}
 
 {% macro viewer_dynamic(category_name, items) %}
@@ -44,11 +44,89 @@
             {% for k in items %}
             <li>
                 <a href="{{ url_for('shopping.view', product_name=k)}}">
-                <img class="myProducts" src="{{url_for('static', filename=k)}}" alt="not available" /></a>
+                    <img class="myProducts" src="{{url_for('static', filename=k)}}" alt="not available" />
+                </a>
             </li>
             {% endfor %}
         </ul>
         <p class="viewp"><a class="view_more" href="">view more</a></p>
     </div>
 </li>
+{% endmacro %}
+
+
+    {% block content %}
+<h1>{% block h1%}Verse Connect{% endblock %}</h1>
+<img id="mainpic" src="{{url_for('static', filename='images/dress9.jpg')}}" alt="Image not found" />
+<div id="container2">
+    </br></br>
+    <h2>{{name}}</h2>
+    <br /><br />
+    <h3 id="karibu">Karibu sana, feel welcomed to explore our amazing products</h3>
+    <a id="page" href="{{url_for('landing_page.land')}}">here</a>
+    <button id="main">About</button>
+    <ul id="products_pics">
+        {% for item in items%}
+        <li class="products">
+            </br>
+            <img src="{{url_for('static', filename=item.product_image)}}" /></br>
+            <p>@{{item.product_price}}shs</p>
+        </li>
+        {% endfor %}
+    </ul>
+    <!--<img src="{{url_for('static', filename='images/dress1.jpg')}}" width="270" height="80"/>-->
+</div>
+    {% endblock %}
+
+{% macro verse_footer() %}
+<div id="footer_cont">
+    <footer>
+        <p>Contacts: 0115293219</p>
+        <p>Email-address: verseconnect05@gmail.com</p>
+        <p id="copyRight">&copy;Verse-Connect 2024</p>
+
+    </footer>
+</div>
+{% endmacro %}
+
+{% macro menu_bar(name, h1_id, title_cont) %}
+<div id="{{ title_cont }}">
+    <h1 id="{{ h1_id }}">{{ name }}</h1>
+<img id="menu_bar" class="dropdown menu_shop" src="{{ url_for('static', filename='icons/menu_bar.png')}}" />
+    </div>
+{% endmacro %}
+
+{% macro styler() %}
+<style>
+    #copyRight{
+        text-align: center;
+    }
+    #title_cont {
+        display: flex;
+        justify-content: center;
+        flex-grow: 1;
+        width: 100%;
+        position: relative;
+    }
+
+    #h1_id {
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    #menu_bar {
+        right: 0px;
+        position: absolute;
+    }
+</style>
+{% endmacro %}
+
+{% macro jquery() %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+{% endmacro %}
+
+{% macro metadata() %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="author" content="Eng Vincent M Karimi" />
+<meta name="description" content="enganing everyone in online business" />
 {% endmacro %}

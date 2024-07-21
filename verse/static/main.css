@@ -5,6 +5,29 @@
 body {
     background-color: #456423;
 }
+.clipper{
+    width: 100%;
+    height: 98vh;
+    object-fit: cover;
+    object-position: 0px -220px;
+    filter: brightness(80%);
+}
+#mycaption{
+    width: 100%;
+    top: -200px;
+}
+.mycaption {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.clipper1 {
+    width: 100%;
+    height: 98vh;
+    object-fit: cover;
+    object-position: 0px -400px;
+    filter: brightness(80%);
+}
 h1{
     position: absolute;
     text-align: center;

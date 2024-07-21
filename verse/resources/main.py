@@ -31,12 +31,12 @@ def add(product_name, description, product_size, product_image, product_price):
     db.session.add(product)
     db.session.commit()
 image_array = [
-        "images/dress1.jpg",
-        "images/dress2.jpg",
-        "images/dress3.jpg",
-        "images/dress4.jpg",
-        "images/dress5.jpg"
-    ];
+        "images/dress7.jpg",
+        "images/dress8.jpg",
+        "images/dress9.jpg",
+        "images/suit3.jpg"
+    ]
+
 @main_page.route("/")
 def main():
     name = "Happy shopping"
@@ -44,7 +44,7 @@ def main():
     try:
         for k in image_array:
             add("dress", "available in various colors", 4, k, 250)
-        return render_template("main.html", name=name, items=items)
+        return render_template("main.html", name=name, pics=image_array)
     except IntegrityError:
         db.session.rollback()
-        return render_template("main.html", name=name, items=items)
+        return render_template("main.html", name=name, pics=image_array)

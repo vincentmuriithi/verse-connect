@@ -4,33 +4,34 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}" 
     <script src="{{url_for('static', filename='jq.js')}}"></script>
     <script src="{{url_for('static', filename='main.js')}}" defer></script>
 </head>
 <body>
-    {% block content %}
-    <h1>{% block h1%}Verse Connect{% endblock %}</h1>
-        <img id="mainpic" src="{{url_for('static', filename='images/dress9.jpg')}}" alt="Image not found"/>
-        <div id="container2">
-            </br></br>
-            <h2>{{name}}</h2>
-            <br /><br />
-            <h3 id="karibu">Karibu sana, feel welcomed to explore our amazing products</h3>
-            <a id="page" href="{{url_for('landing_page.land')}}">here</a>
-            <button id="main">About</button>
-            <ul id="products_pics">
-                {% for item in items%}
-                <li class="products">
-                    </br>
-                    <img src="{{url_for('static', filename=item.product_image)}}" /></br>
-                    <p>@{{item.product_price}}shs</p>
-                </li>
-                {% endfor %}
-            </ul>
-            <!--<img src="{{url_for('static', filename='images/dress1.jpg')}}" width="270" height="80"/>-->
-        </div>
-    {% endblock %}
+   <div id="verse-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+       <div class="carousel-inner">
+           <div class="carousel-item active">
+               <img class="d-block clipper" src="{{ url_for('static', filename=pics[0])}}" />
+               <div class="carousel-caption mycaption">
+                   <h1 id ="mycaption">Verse-Connect</h1>
+               </div>
+           </div>
+           {% for k in pics[1:] %}
+           <div class="carousel-item">
+               <img class="d-block clipper{% if k == pics[1] %}1{% endif %}" src="{{ url_for('static', filename=k)}}" />
+           </div>
+           {% endfor %}
+       </div>
+       <div class="carousel-indicators">
+           <button type="button" data-bs-target="#verse-carousel" data-bs-slide-to="0" class="active"></button>
+           {% for j in range(1, pics | length) %}
+           <button type="button" data-bs-target="#verse-carousel" data-bs-slide-to="{{j}}"></button>
+           {% endfor %}
+       </div>
+   </div>
 </body>
 </html>

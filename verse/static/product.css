@@ -8,6 +8,27 @@
     margin: 0px;
     background-color: transparent;
 }
+#proceed_btn{
+    padding: 8px;
+    border-radius: 10px;
+
+}
+#proceed_btn:hover{
+    background-color: red;
+}
+#checkout{
+    width: 64px;
+    height: 64px;
+}
+.btn {
+    padding: 8px;
+    border-radius: 10px;
+    border: 0px;
+}
+    .btn:hover {
+        background-color: red;
+        box-shadow: 1px 3px 2px #ff2020;
+    }
 .prod_cont1 {
     display: flex;
     text-align: center;

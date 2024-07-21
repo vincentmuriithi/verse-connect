@@ -1,0 +1,29 @@
+﻿{% from "macros1.html" import verse_footer, styler, menu_bar, metadata %}
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    {{ metadata() }}
+    <title></title>
+    {{ styler() }}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='verse-signup.css')}}" />
+</head>
+<body>
+    {{ menu_bar("Verse-Agent Login", "h1_id", "title_cont")}}
+    <div>
+    </div>
+    <div id="form_cont">
+        <div id="form_cont1">
+            <form action="/verse_signup" method="POST">
+                <label>Email: </label>
+                <input class="myinputs" type="email" id="email" name="email" required /><br />
+                <label>Pasword: </label>
+                <input class="myinputs" type="password" id="pasword" name="password" required /><br />
+                <input type="submit" id="submitter" value="login" /><br />
+            </form>
+        </div>
+    </div>
+    {{ verse_footer() }}
+</body>
+</html>

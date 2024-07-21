@@ -1,10 +1,15 @@
-﻿<!DOCTYPE html>
+﻿{% from "macros1.html" import verse_footer, styler %}
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <title>product</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='product.css')}}" />
+    <script src="{{ url_for('static', filename='jq.js')}}"></script>
+    <script src="{{ url_for('static', filename='product.js')}}" defer></script>
+    {{ styler() }}
 </head>
 <body>
     <div class="prod_cont0">
@@ -18,12 +23,42 @@
         <hr />
         <p>Name: </p>
         <p>Price: </p>
-        <p>Suppliers</p>
+        <h3><strong>Suppliers</strong></h3>
+        <button id="suppliers0" class="suppliers1">view</button>
+        <ul id="suppliers1">
+            {% for s in suppliers %}
+            <li>
+                <div>
+                <input class="suppliers1" type="radio" id="{{s.name}}" name="supplier" value="{{s.name}}" />
+                <p>Name: {{s.name}}</p>
+                <p>Location: {{s.location}}</p>
+                <p>Price: {{s.price}}</p>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <h2>Add to Cart</h2>
+        <hr />
+        <label><img src="{{ url_for('static', filename='icons/add_cart.png')}}" /></label>
+        <input type="number" name="cart" value="product_name" min="0"/>
+        <button class="btn">Add</button>
+    </div>
+    <div>
+        <h2>Checkout</h2>
+        <hr />
+        <label>Confirm payment: </label><input id="mycheckbox" type="checkbox" name="true" value="1" /><br />
+       <label><img id="checkout" src="{{ url_for('static', filename='icons/checkout.png')}}" /></label>
+        <button id="proceed_btn">Proceed</button>
+        <p id="notchecked"></p>
     </div>
     <div>
         <h2>Related Products</h2>
         <hr />
 
     </div>
+    <br />
+    {{ verse_footer() }}
 </body>
 </html>
