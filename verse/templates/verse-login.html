@@ -1,4 +1,4 @@
-﻿{% from "macros1.html" import verse_footer, styler, menu_bar, metadata %}
+﻿{% from "macros1.html" import verse_footer, styler, menu_bar, metadata, menu_barjs, jquery, menu_barstyler  %}
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -6,22 +6,29 @@
     <meta charset="utf-8" />
     {{ metadata() }}
     <title></title>
+    {{ jquery() }}
     {{ styler() }}
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='verse-signup.css')}}" />
+    {{ menu_barstyler() }}
+    {{ menu_barjs() }}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='verse_login.css')}}" />
 </head>
 <body>
     {{ menu_bar("Verse-Agent Login", "h1_id", "title_cont")}}
-    <div>
+    <div class="dropdown menu_shop hidder">
+        <a href="/shopping">Verse-home</a>
+        <a href="/verse_signup">Sign-up</a>
+        <a href="">help</a>
     </div>
     <div id="form_cont">
         <div id="form_cont1">
-            <form action="/verse_signup" method="POST">
+            <form action="/verse_login" method="POST">
                 <label>Email: </label>
                 <input class="myinputs" type="email" id="email" name="email" required /><br />
                 <label>Pasword: </label>
                 <input class="myinputs" type="password" id="pasword" name="password" required /><br />
                 <input type="submit" id="submitter" value="login" /><br />
             </form>
+            <a id="forgot_password" href="">forgot password</a>
         </div>
     </div>
     {{ verse_footer() }}

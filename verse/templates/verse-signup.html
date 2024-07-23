@@ -1,4 +1,4 @@
-﻿{% from "macros1.html" import verse_footer, styler, menu_bar, metadata %}
+﻿{% from "macros1.html" import verse_footer, styler, menu_bar, metadata, jquery, menu_barjs, menu_barstyler %}
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -7,10 +7,18 @@
     {{ metadata() }}
     <title></title>
     {{ styler() }}
+    {{ jquery() }}
+    {{ menu_barstyler() }}
+    {{ menu_barjs() }}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='verse-signup.css')}}" />
 </head>
 <body>
     {{ menu_bar("Verse-Agent Registration", "h1_id", "title_cont")}}
+    <div class="dropdown menu_shop hidder">
+        <a href="/shopping">Verse-home</a>
+        <a href="/verse_login">Login</a>
+        <a href="">help</a>
+    </div>
     <div>
     </div>
     <div id="form_cont">
@@ -25,11 +33,11 @@
                 <label>Tel no: </label>
                 <input class="myinputs" type="tel" id="tel" name="tel" required /><br />
                 <label>Location: </label>
-                <input class="myinputs" type="text" id="location" name="location" autocomplete="on" spellcheck="true"  required /><br />
+                <input class="myinputs" type="text" id="location" name="location" autocomplete="on" spellcheck="true" required /><br />
                 <input type="submit" id="submitter" value="sign-up" /><br />
             </form>
         </div>
     </div>
-{{ verse_footer() }}
+    {{ verse_footer() }}
 </body>
 </html>

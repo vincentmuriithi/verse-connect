@@ -1,4 +1,4 @@
-﻿{% from "macros1.html" import verse_footer, styler %}
+﻿{% from "macros1.html" import verse_footer, styler, menu_bar, jquery, menu_barjs, menu_bardark %}
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -10,8 +10,18 @@
     <script src="{{ url_for('static', filename='jq.js')}}"></script>
     <script src="{{ url_for('static', filename='product.js')}}" defer></script>
     {{ styler() }}
+    {{ jquery() }}
+    {{ menu_bardark() }}
+    {{ menu_barjs() }}
 </head>
 <body>
+    {{ menu_bar(" ", "h1_id", "title_cont") }}
+    <div class="dropdown menu_shop hidder">
+        <a href="/shopping">Verse_Home</a>
+        <a href="/verse_signup">Signup</a>
+        <a href="/verse_login">Login</a>
+        <a href="">help</a>
+    </div>
     <div class="prod_cont0">
         <div class="prod_cont1">
             <br />
@@ -29,10 +39,10 @@
             {% for s in suppliers %}
             <li>
                 <div>
-                <input class="suppliers1" type="radio" id="{{s.name}}" name="supplier" value="{{s.name}}" />
-                <p>Name: {{s.name}}</p>
-                <p>Location: {{s.location}}</p>
-                <p>Price: {{s.price}}</p>
+                    <input class="suppliers1" type="radio" id="{{s.name}}" name="supplier" value="{{s.name}}" />
+                    <p>Name: {{s.name}}</p>
+                    <p>Location: {{s.location}}</p>
+                    <p>Price: {{s.price}}</p>
                 </div>
             </li>
             {% endfor %}
@@ -42,14 +52,14 @@
         <h2>Add to Cart</h2>
         <hr />
         <label><img src="{{ url_for('static', filename='icons/add_cart.png')}}" /></label>
-        <input type="number" name="cart" value="product_name" min="0"/>
+        <input type="number" name="cart" value="product_name" min="0" />
         <button class="btn">Add</button>
     </div>
     <div>
         <h2>Checkout</h2>
         <hr />
         <label>Confirm payment: </label><input id="mycheckbox" type="checkbox" name="true" value="1" /><br />
-       <label><img id="checkout" src="{{ url_for('static', filename='icons/checkout.png')}}" /></label>
+        <label><img id="checkout" src="{{ url_for('static', filename='icons/checkout.png')}}" /></label>
         <button id="proceed_btn">Proceed</button>
         <p id="notchecked"></p>
     </div>

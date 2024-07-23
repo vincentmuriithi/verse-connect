@@ -7,7 +7,7 @@ Author:  Vincent M Karimi
 """
 
 from flask import Flask
-from resources import main_page, db, account, landing_page, shoper, agents
+from routes import main_page, db, account, landing_page, shoper, agents
 from waitress import serve #used when developing in windows environment as a server, it's serves the 
 # equivalence of gunicorn in unix systems
 import logging

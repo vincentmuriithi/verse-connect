@@ -34,6 +34,8 @@
     <div id="clear_float">
         <button id="profile_btn" class="pic_listener">profile pic</button><br />
         <form class="pic_listener" id="pic_form" action="/verse_uploads" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="agent_email" value="{{ details.email }}" />
+            <input type="hidden" name="name" value="{{ details.name }}" />
             <input type="file" name="profile_pic" accept=".jpg, .jpeg" />
             <input id="pic_submitter" type="submit" value="change pic" />
         </form>
@@ -41,6 +43,10 @@
     <div id="clear_float">
         <h2>Products subscription</h2>
         <hr />
+        <ul>
+        </ul>
+        <img id="product_adder" src="{{ url_for('static', filename='icons/add.png')}}" />
+        <div id="product_choice"></div>
     </div>
     <div>
         <h2>Services Subscriptions</h2>

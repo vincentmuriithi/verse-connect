@@ -9,7 +9,7 @@ class agent(Document):
     email = EmailField(required=True, unique=True)
     product_sub = DictField()
     service_sub = DictField()
-    profile_pic = BinaryField()
+    profile_pic = StringField(default="default.jpg")
     location = StringField(max_length=20)
     password = StringField(max_length=150)
     tel = IntField()

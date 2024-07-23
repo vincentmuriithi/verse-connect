@@ -92,15 +92,16 @@
 {% macro menu_bar(name, h1_id, title_cont) %}
 <div id="{{ title_cont }}">
     <h1 id="{{ h1_id }}">{{ name }}</h1>
-<img id="menu_bar" class="dropdown menu_shop" src="{{ url_for('static', filename='icons/menu_bar.png')}}" />
-    </div>
+    <img id="menu_bar" class="dropdown menu_shop" src="{{ url_for('static', filename='icons/menu_bar.png')}}" />
+</div>
 {% endmacro %}
 
 {% macro styler() %}
 <style>
-    #copyRight{
+    #copyRight {
         text-align: center;
     }
+
     #title_cont {
         display: flex;
         justify-content: center;
@@ -129,4 +130,86 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="author" content="Eng Vincent M Karimi" />
 <meta name="description" content="enganing everyone in online business" />
+{% endmacro %}
+
+{% macro menu_barstyler() %}
+<!--This macro complies with the ids and classes defined in the macro menu_bar-->
+<style>
+    .menu_shop {
+        position: absolute;
+        right: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hidder {
+        height: 80px;
+    }
+
+    .menu_shop a {
+        text-decoration: none;
+        color: transparent;
+        background: conic-gradient(from 90deg at left, gold, orange 5%, white 20%);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+
+        .menu_shop a:hover {
+            background: radial-gradient(ellipse, #fff, pink);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+</style>
+{% endmacro %}
+
+{% macro menu_bardark() %}
+<!--This macro complies with the ids and classes defined in the macro menu_bar-->
+<style>
+    .menu_shop {
+        position: absolute;
+        right: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hidder {
+        height: 80px;
+    }
+
+    .menu_shop a {
+        text-decoration: none;
+        color: transparent;
+        background: conic-gradient(from 90deg at left, white, #fff 5%, white 20%);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+
+        .menu_shop a:hover {
+            background: radial-gradient(ellipse, #fff, #000);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+</style>
+{% endmacro %}
+
+{% macro menu_barjs() %}
+<script defer>
+    $(() => {
+        var menu_bar = $("#menu_bar");
+        var menu_shop = $(".hidder");
+        menu_shop.hide();
+        menu_bar.click(() => {
+            menu_shop.toggle();
+        });
+        $(document).click((event) => {
+            if (!$(event.target).closest(".dropdown").length)
+                menu_shop.hide();
+        });
+
+    });
+</script>
 {% endmacro %}

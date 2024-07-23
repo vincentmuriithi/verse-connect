@@ -1,7 +1,8 @@
 ﻿body {
     background-color: rgba(60, 65, 80, 1);
 }
-#form_cont{
+
+#form_cont {
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -11,30 +12,46 @@
     width: 100%;
     height: 70vh;
 }
-form input{
-    margin-bottom: 20px;
+
+form input {
+    margin-bottom: 30px;
 }
-form{
+
+form {
     background-color: transparent;
 }
+
 .myinputs {
     background-color: transparent;
     border: 0px;
     border-bottom: 1px solid #000;
     color: #30fb30;
 }
-label{
+#forgot_password{
+    color: transparent;
+    background: linear-gradient(to right, yellow, orange, brown);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+
+label {
     border: none;
 }
-input:focus{
+
+input:focus {
     outline: none;
 }
-#submitter{
+
+#submitter {
     background: linear-gradient(to left, red, green, blue);
     padding: 6px;
     width: 90px;
     border-radius: 8px;
 }
+
     #submitter:hover {
         color: transparent;
         background: url("gifs/fxp1.gif") center center;

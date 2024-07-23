@@ -23,13 +23,16 @@ def dashboard(name, email):
         return redirect(url_for("agents.login"))
     verse_connect()
     agent1 = agent.objects(email=email).first()
+    if not agent1:
+        disconnect()
+        return redirect(url_for("agents.login"))
     details = {
         "name" : agent1.name,
         "email" : agent1.email,
         "location" : agent1.location,
         "tel" : agent1.tel
         }
-    file_url = url_for("agents.retrieve", filename="beauty.jpg")
+    file_url = url_for("agents.retrieve", filename=agent1.profile_pic)
     print(file_url)
     disconnect()
     return render_template("agent_dashboard.html", file_url=file_url, details=details)
@@ -40,8 +43,10 @@ new_path = os.path.join(abs_path, "..")
 @agents.route("/verse_uploads", methods = ["POST"])
 def upload():
     if request.method == "POST":
-        if 'profile_pic' in request.files:
+        if 'profile_pic' in request.files and "agent_email" in request.form:
             uploaded_file = request.files['profile_pic']
+            email = request.form.get("agent_email")
+            name = request.form.get("name")
             if uploaded_file.filename != '':
                 print("file uploaded")
                 filename = secure_filename(uploaded_file.filename)
@@ -52,10 +57,14 @@ def upload():
                 upload_path = os.path.join(file_path, filename)
                 try:
                     uploaded_file.save(upload_path)
+                    verse_connect()
+                    verse_agent = agent.objects(email=email).first()
+                    verse_agent.update(profile_pic=uploaded_file.filename)
+                    disconnect()
                     print(f"file has been uploaded and saved to {upload_path}")
                 except Exception as e:
                     print(f"{e}")
-    return redirect(url_for('agents.dashboard'))
+    return redirect(url_for('agents.dashboard', name=name, email=email))
 
 @agents.route("/verse_signup", methods=["GET", "POST"])
 def signup():
@@ -87,4 +96,14 @@ def signup():
 
 @agents.route("/verse_login", methods=["GET", "POST"])
 def login():
+    if request.method == "POST":
+        email = request.form.get("email")
+        password = request.form.get("password")
+        verse_connect()
+        verse_agent = agent.objects(email=email).first()
+        if verse_agent:
+            hashed_password = verse_agent.password
+            if bcrypt.checkpw(password.encode("utf-8"), hashed_password.encode("utf-8")):
+                name = verse_agent.name
+                return redirect(url_for("agents.dashboard", name=name, email=email))    
     return render_template("verse-login.html")
